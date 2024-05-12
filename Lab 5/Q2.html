@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+</head>
+<body>
+  <h1>Book Details</h1>
+
+  <h2>(a) Title of the first book:</h2>
+  <p id="1stBookTitle"></p>
+
+  <h2>(b) Author of the second book:</h2>
+  <p id="2ndBookAuthor"></p>
+
+  <h2>(c) Genres of all books:</h2>
+  <ul id="bookGenres"></ul>
+
+  <script>
+    const booksData = {
+      "books": [
+        {
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "publicationYear": 1925,
+          "genres": ["Fiction", "Classics"]
+        },
+        {
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "publicationYear": 1960,
+          "genres": ["Fiction", "Coming-of-Age"]
+        }
+      ]
+    };
+
+    document.getElementById('1stBookTitle').textContent = booksData.books[0].title;
+    document.getElementById('2ndBookAuthor').textContent = booksData.books[1].author;
+
+    const genresList = booksData.books.reduce((acc, book) => acc.concat(book.genres), []);
+    const genresHTML = genresList.map(genre => `<li>${genre}</li>`).join('');
+    document.getElementById('bookGenres').innerHTML = genresHTML;
+  </script>
+</body>
+</html>

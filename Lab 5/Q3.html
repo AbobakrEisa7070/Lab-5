@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="myElement">This text will be modified.</div>
+  <div id="myDIV" class="originalStyle">This element can have styles changed.</div>
+  <button id="myButton">Click me!</button>
+
+  <script>
+    $(document).ready(function() {
+      // (a) Modify text content
+      $("#myElement").text("Modified Text");
+
+      // (b) Add class to element
+      $("#myDIV").addClass("myStyle"); // Adds "myStyle" class
+
+      // (c) Attach click event to button
+      $("#myButton").click(function() {
+        alert("Button clicked!");
+      });
+    });
+  </script>
+</body>
+</html>
+
